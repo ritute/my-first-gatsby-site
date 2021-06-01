@@ -12,6 +12,15 @@ module.exports = {
         displayName: false
       }
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "blog",
+        path: `${__dirname}/blog/`,
+      },
+    },
+    "gatsby-plugin-mdx",
+    "gatsby-transformer-sharp",
   ],
   flags: {
     DEV_SSR: false,

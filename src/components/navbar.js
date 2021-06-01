@@ -30,6 +30,9 @@ const Navbar = () => {
         <NavLinkItem>
           <NavLinkText to='/about'>About</NavLinkText>
         </NavLinkItem>
+        <NavLinkItem>
+          <NavLinkText to='/blog'>Blog</NavLinkText>
+        </NavLinkItem>
       </NavLinks>
     </Nav>
   )
