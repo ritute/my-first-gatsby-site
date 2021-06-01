@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import Navbar from './navbar'
 
@@ -9,18 +10,32 @@ const Container = styled.main`
   font-family: sans-serif;
 `
 
-const Title = styled.title`
-
+const Title = styled.p`
+  font-size: 3rem;
+  color: gray;
+  font-weight: 700;
 `
 
 const Header = styled.h1`
-
+  color: rebeccapurple;
 `
 
 const Layout = ({ pageTitle, children }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+  const { site : { siteMetadata : { title }}} = data
+
   return (
     <Container>
-      <Title>{pageTitle}</Title>
+      <title>{title}</title>
+      <Title>{title}</Title>
       <Navbar />
       <Header>{pageTitle}</Header>
       {children}
